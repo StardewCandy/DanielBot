@@ -93,4 +93,4 @@ async def on_message(message):
 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
-client.run(token)
+client.run(Idga8OR0ylLnYhZCKmMHXUCS3KfuLkcR)
