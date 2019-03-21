@@ -97,13 +97,13 @@ async def on_message(message):
     await client.say('I\'m sure you know the rules, but if you don\'t, guess one letter at a time!')
     await client.say('You only get 8 attempts! Good luck! The theme is FEH units!')
     Answer = ['NINO', 'CORRIN', 'AYRA', 'ROBIN','LUCINA', 'BARTRE', 'ALFONSE', 'SHARENA', 'ANNA', 'LOKI', 'VERONICA', 'BRUNO','SURTR', 'LAEVATEIN', 'LAEGJARN', 'HELBINDI', 'MORGAN', 'KANA', 
-    'WILLIAM HOWARD TAFT', 'THEODORE ROOSEVELT', 'WILLIAM MCKINLEY', 
-    'GROVER CLEVELAx', 'BENJAMIN HARRISON', 'CHESTER A ARTHUR', 
-    'JAMES A GARFIELD', 'RUTHERFORD B HAYES', 'ULYESS S GRANT', 'ANDREW JACKSON',
-    'ABRAMHAM LINCOLN', 'JAMES BUCHANAN', 'FRANKLIN PIERCE', 'MILLARD FILLMORE',
-    'ZACHARY TAYLOR', 'JAMES K POLK', 'JOHN TYLER', 'WILLIAM HENERY HARRISON',
-    'MARTIN VAN BUREN','ANDREW JACKSON', 'JOHN QUINCY ADAMS', 'JAMES MONROE',
-    'JAMES MADISON', 'THOMAS JEFFERSON', 'JOHN ADAMS', 'GEORGE WASHINGTON']
+    'CAMILLA', 'ELISE', 'LEO', 
+    'XANDER', 'RYOMA', 'HINOKA', 
+    'TAKUMI', 'SAKURA', 'AZURA', 'CHROM',
+    'MARTH', 'CAEDA', 'ALM', 'CELICA',
+    'SELIPH', 'SIGURD', 'ARVIS', 'EPHRAIM',
+    'EIRIKA','LYON', 'LYN', 'ELIWOOD',
+    'HECTOR', 'FJORM', 'GUNNTHRA', 'YLGR', 'HRID']
     #Word Picker
     Answer_new = random.choice(Answer)
     #Guessed word
@@ -123,15 +123,15 @@ async def on_message(message):
             guess.append('_')
     #await client.say out the guess(with underscores) and word(original word)
     #
-    await client.say('For testing purposes this is the word:')
+    await client.say('Word:')
     await client.say(''.join(word))
     await client.say(''.join(guess))
-    await client.say('Number of lifes left:',lifes)
+    await client.say('Number of tries left: '+lifes)
     
     #Constraints the number of guesses
     while count < 8:
         #Raw Input, limited to the length of the word you are trying to guess 
-        guessed = input('Guess(You only guess 1 letter at a time): ')[:1]
+        guessed = input('Guess(Sorry, you guessed more than 1 letter.): ')[:1]
         what_guessed += guessed
         #Checks the guessed in word and then replaces the underscore with chars.
         for character in guessed:
@@ -149,14 +149,14 @@ async def on_message(message):
         
         
         #Print out the guess(with underscores) and word(original word)
-        await client.say('For testing purposes this is the word:')
+        await client.say('Word:')
         await client.say(''.join(word))
         await client.say(''.join(guess))
-        await client.say('Number of lifes left:',lifes)
+        await client.say('Number of tries left: ',lifes)
         await client.say('What you have guessed so far:', what_guessed)
     #Ending of the python game(win/loose)
     if count < 8: 
-        await client.say('YOU WIN!')
+        await client.say('Good job! You won!')
     else:
         await client.say('You Lose! The president we were looking for is',  Answer_new )
     #Printing of thank you message and credits at the end of the game
