@@ -95,3 +95,4 @@ async def on_message(message):
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
 client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WRTw.JZ2V_MyFcXoPnOJyxnHgGz89gig")
+sizefix= done
