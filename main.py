@@ -92,73 +92,73 @@ async def on_message(message):
     if message.content.startswith('mhw!xenojiiva'):
       await client.send_message(message.channel,'Xeno\'Jiiva: Elder Dragon \n Weaknesses: All Elements(Weakness Level 2) \n Status Weaknesses: Poison(Weakness Level 3), Paraylsis(Weakness Level 1), Blast(Weakness Level 2), Stun(Weakness Level 1) \n Resistances: Sleep \n Elderseal Effect: Reduces duration of Rage Mode. \n Weak Points: Head, Foreclaws, Tail \n \n Daniel\'s Solo Tips: Go for the time-tested LBG and a new piece of your arsenal, the Fireproof Mantle. Xeno\'Jiiva heats up the ground by using its beam attack, so you\'ll need the mantle to avoid Burning. Stalactites above can be knocked down. Make sure to stay on the elevated platforms to avoid its melee attacks until it breaks the platform. Use as much Dragon Ammo as possible to inflict Elderseal and keep its Rage Mode from hurting you too much. \n Daniel\'s Team Tips: Start with one two DPS LBGs, one Support LBG, and on DPS IG. Support LBG keeps the group safe with Healing Ammo and Dragon Ammo, as the IG goes to attack the tail with a Poison Kinsect. The DPS LBGs start by attacking the foreclaws, then move on to the head. Use plenty of Pierce Ammo, as it\'s one of the best Ammo types. Eventually you\'ll whittle its health down enough to win, as you keep yourself alive with Ghillie/Temporal Mantles and Potions.')
     if message.content.startswith('dan!hangman')
-    await client.say('Yay! Let\'s play Hangman!')
-    await client.say('Make sure to guess letters in caps!')
-    await client.say('I\'m sure you know the rules, but if you don\'t, guess one letter at a time!')
-    await client.say('You only get 8 attempts! Good luck! The theme is FEH units!')
-    Answer = ['NINO', 'CORRIN', 'AYRA', 'ROBIN','LUCINA', 'BARTRE', 'ALFONSE', 'SHARENA', 'ANNA', 'LOKI', 'VERONICA', 'BRUNO','SURTR', 'LAEVATEIN', 'LAEGJARN', 'HELBINDI', 'MORGAN', 'KANA', 
-    'CAMILLA', 'ELISE', 'LEO', 
-    'XANDER', 'RYOMA', 'HINOKA', 
-    'TAKUMI', 'SAKURA', 'AZURA', 'CHROM',
-    'MARTH', 'CAEDA', 'ALM', 'CELICA',
-    'SELIPH', 'SIGURD', 'ARVIS', 'EPHRAIM',
-    'EIRIKA','LYON', 'LYN', 'ELIWOOD',
-    'HECTOR', 'FJORM', 'GUNNTHRA', 'YLGR', 'HRID']
-    #Word Picker
-    Answer_new = random.choice(Answer)
-    #Guessed word
-    guessed = ''
-    guess = []
-    word = []
-    what_guessed = []
-    lifes = 8
-    #Counter which increments based on the number of times guessed
-    count = 0
-    #Changes all characters aside from spaces to an underscore, appends to guess
-    for items in Answer_new:
-        word.append(items)
-        if items == ' ':
-            guess.append(' ')
-        else:
-            guess.append('_')
-    #await client.say out the guess(with underscores) and word(original word)
-    #
-    await client.say('Word:')
-    await client.say(''.join(word))
-    await client.say(''.join(guess))
-    await client.say('Number of tries left: '+lifes)
-    
-    #Constraints the number of guesses
-    while count < 8:
-        #Raw Input, limited to the length of the word you are trying to guess 
-        guessed = input('Guess(Sorry, you guessed more than 1 letter.): ')[:1]
-        what_guessed += guessed
-        #Checks the guessed in word and then replaces the underscore with chars.
-        for character in guessed:
-            for char in range(0, len(word)):
-                if character == word[char]:
-                    guess[char]=word[char]
-        
-        
-        #Terminates the python function if code is correct, else, keeps going
-        if (''.join(guess)) == Answer_new:
-            break
-        if guessed not in Answer_new:
-            lifes = lifes - 1
-            count += 1
-        
-        
-        #Print out the guess(with underscores) and word(original word)
+        await client.say('Yay! Let\'s play Hangman!')
+        await client.say('Make sure to guess letters in caps!')
+        await client.say('I\'m sure you know the rules, but if you don\'t, guess one letter at a time!')
+        await client.say('You only get 8 attempts! Good luck! The theme is FEH units!')
+        Answer = ['NINO', 'CORRIN', 'AYRA', 'ROBIN','LUCINA', 'BARTRE', 'ALFONSE', 'SHARENA', 'ANNA', 'LOKI', 'VERONICA', 'BRUNO','SURTR', 'LAEVATEIN', 'LAEGJARN', 'HELBINDI', 'MORGAN', 'KANA', 
+        'CAMILLA', 'ELISE', 'LEO', 
+        'XANDER', 'RYOMA', 'HINOKA', 
+        'TAKUMI', 'SAKURA', 'AZURA', 'CHROM',
+        'MARTH', 'CAEDA', 'ALM', 'CELICA',
+        'SELIPH', 'SIGURD', 'ARVIS', 'EPHRAIM',
+        'EIRIKA','LYON', 'LYN', 'ELIWOOD',
+        'HECTOR', 'FJORM', 'GUNNTHRA', 'YLGR', 'HRID']
+        #Word Picker
+        Answer_new = random.choice(Answer)
+        #Guessed word
+        guessed = ''
+        guess = []
+        word = []
+        what_guessed = []
+        lifes = 8
+        #Counter which increments based on the number of times guessed
+        count = 0
+        #Changes all characters aside from spaces to an underscore, appends to guess
+        for items in Answer_new:
+            word.append(items)
+            if items == ' ':
+                guess.append(' ')
+            else:
+                guess.append('_')
+        #await client.say out the guess(with underscores) and word(original word)
+        #
         await client.say('Word:')
         await client.say(''.join(word))
         await client.say(''.join(guess))
-        await client.say('Number of tries left: ',lifes)
-        await client.say('What you have guessed so far:', what_guessed)
+        await client.say('Number of tries left: '+lifes)
+    
+        #Constraints the number of guesses
+        while count < 8:
+            #Raw Input, limited to the length of the word you are trying to guess 
+            guessed = input('Guess(Sorry, you guessed more than 1 letter.): ')[:1]
+            what_guessed += guessed
+            #Checks the guessed in word and then replaces the underscore with chars.
+            for character in guessed:
+                for char in range(0, len(word)):
+                    if character == word[char]:
+                        guess[char]=word[char]
+        
+        
+            #Terminates the python function if code is correct, else, keeps going
+            if (''.join(guess)) == Answer_new:
+                break
+            if guessed not in Answer_new:
+                lifes = lifes - 1
+                count += 1
+        
+        
+            #Print out the guess(with underscores) and word(original word)
+            await client.say('Word:')
+            await client.say(''.join(word))
+            await client.say(''.join(guess))
+            await client.say('Number of tries left: ',lifes)
+            await client.say('What you have guessed so far:', what_guessed)
     #Ending of the python game(win/loose)
-    if count < 8: 
-        await client.say('Good job! You won!')
-    else:
-        await client.say('Sorry, you lost. The Hero you were looking for was ',  Answer_new )
+        if count < 8: 
+            await client.say('Good job! You won!')
+        else:
+            await client.say('Sorry, you lost. The Hero you were looking for was ',  Answer_new )
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
 client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WRTw.JZ2V_MyFcXoPnOJyxnHgGz89gig")
