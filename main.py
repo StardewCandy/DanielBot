@@ -91,7 +91,14 @@ async def on_message(message):
       await client.send_message(message.channel,'Teostra: Elder Dragon \n Weaknesses: Water(Weakness Level 3), Ice(Weakness Level 3), Thunder(Weakness Level 1), Dragon(Weakness Level 1) \n Status Weaknesses: Poison(Weakness Level 2), Stun(Weakness Level 2), Sleep(Weakness Level 1), Blast(Weakness Level 1), Paralysis(Weakness Level 1) \n Resistances: Fire \n Elderseal Effect: Removes Supernova ability, drastically lowering its danger level. \n Weak Points: Face, Wings, Tail \n \n Daniel\'s Solo Tips: Initiate combat with Insect Glaive and a Sleep Kinsect. Put it to sleep, and cut off the tail while you can! It\'s a general rule of thumb that a shrunk hitbox makes a weakened monster. Then Farcaster away and switch to LBG. Fire away with Poison Ammo, and shoot Water Ammo/Ice Ammo for that Level 3 Weakness damage.\n Daniel\'s Team Tips: Start with a single IG to sever, one support LBG, 1 status LBG, and one DPS LBG. Put it to sleep/paralyze it and try to sever the tail. Then switch the IG to another support LBG. Continue protecting the DPS LBG, and attack the Teostra in openings between heals. This strategy encompasses Lunastra, too!')
     if message.content.startswith('mhw!xenojiiva'):
       await client.send_message(message.channel,'Xeno\'Jiiva: Elder Dragon \n Weaknesses: All Elements(Weakness Level 2) \n Status Weaknesses: Poison(Weakness Level 3), Paraylsis(Weakness Level 1), Blast(Weakness Level 2), Stun(Weakness Level 1) \n Resistances: Sleep \n Elderseal Effect: Reduces duration of Rage Mode. \n Weak Points: Head, Foreclaws, Tail \n \n Daniel\'s Solo Tips: Go for the time-tested LBG and a new piece of your arsenal, the Fireproof Mantle. Xeno\'Jiiva heats up the ground by using its beam attack, so you\'ll need the mantle to avoid Burning. Stalactites above can be knocked down. Make sure to stay on the elevated platforms to avoid its melee attacks until it breaks the platform. Use as much Dragon Ammo as possible to inflict Elderseal and keep its Rage Mode from hurting you too much. \n Daniel\'s Team Tips: Start with one two DPS LBGs, one Support LBG, and on DPS IG. Support LBG keeps the group safe with Healing Ammo and Dragon Ammo, as the IG goes to attack the tail with a Poison Kinsect. The DPS LBGs start by attacking the foreclaws, then move on to the head. Use plenty of Pierce Ammo, as it\'s one of the best Ammo types. Eventually you\'ll whittle its health down enough to win, as you keep yourself alive with Ghillie/Temporal Mantles and Potions.')
-
+    if message.content.startswith('dan!dice'):
+			dice = random.randint(1,6)
+			dice2 = str(dice)
+			await client.send_message(message.channel,'Let\'s see... You rolled a ' + dice2+'! Did you get what you were hoping for?')
+		if message.content.startswith('dan!d20'):
+			d20=random.randint(1,20)
+			d202 = str(d20)
+			await client.send_message(message.channel, 'Let\'s see... You rolled a' + d202 + '! Did you get what you were hoping for?') 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
 client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WRTw.JZ2V_MyFcXoPnOJyxnHgGz89gig")
