@@ -92,6 +92,8 @@ async def on_message(message):
     if message.content.startswith('mhw!xenojiiva'):
       await client.send_message(message.channel,'Xeno\'Jiiva: Elder Dragon \n Weaknesses: All Elements(Weakness Level 2) \n Status Weaknesses: Poison(Weakness Level 3), Paraylsis(Weakness Level 1), Blast(Weakness Level 2), Stun(Weakness Level 1) \n Resistances: Sleep \n Elderseal Effect: Reduces duration of Rage Mode. \n Weak Points: Head, Foreclaws, Tail \n \n Daniel\'s Solo Tips: Go for the time-tested LBG and a new piece of your arsenal, the Fireproof Mantle. Xeno\'Jiiva heats up the ground by using its beam attack, so you\'ll need the mantle to avoid Burning. Stalactites above can be knocked down. Make sure to stay on the elevated platforms to avoid its melee attacks until it breaks the platform. Use as much Dragon Ammo as possible to inflict Elderseal and keep its Rage Mode from hurting you too much. \n Daniel\'s Team Tips: Start with one two DPS LBGs, one Support LBG, and on DPS IG. Support LBG keeps the group safe with Healing Ammo and Dragon Ammo, as the IG goes to attack the tail with a Poison Kinsect. The DPS LBGs start by attacking the foreclaws, then move on to the head. Use plenty of Pierce Ammo, as it\'s one of the best Ammo types. Eventually you\'ll whittle its health down enough to win, as you keep yourself alive with Ghillie/Temporal Mantles and Potions.')
 
+
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
-client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3P_lg.AHNGsYtNTzLJsjIvsfmv_T-1qoc")
+client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WOSA.P8UierWgqQ1DOAzxNwm57ebOcBE
+")
