@@ -91,8 +91,79 @@ async def on_message(message):
       await client.send_message(message.channel,'Teostra: Elder Dragon \n Weaknesses: Water(Weakness Level 3), Ice(Weakness Level 3), Thunder(Weakness Level 1), Dragon(Weakness Level 1) \n Status Weaknesses: Poison(Weakness Level 2), Stun(Weakness Level 2), Sleep(Weakness Level 1), Blast(Weakness Level 1), Paralysis(Weakness Level 1) \n Resistances: Fire \n Elderseal Effect: Removes Supernova ability, drastically lowering its danger level. \n Weak Points: Face, Wings, Tail \n \n Daniel\'s Solo Tips: Initiate combat with Insect Glaive and a Sleep Kinsect. Put it to sleep, and cut off the tail while you can! It\'s a general rule of thumb that a shrunk hitbox makes a weakened monster. Then Farcaster away and switch to LBG. Fire away with Poison Ammo, and shoot Water Ammo/Ice Ammo for that Level 3 Weakness damage.\n Daniel\'s Team Tips: Start with a single IG to sever, one support LBG, 1 status LBG, and one DPS LBG. Put it to sleep/paralyze it and try to sever the tail. Then switch the IG to another support LBG. Continue protecting the DPS LBG, and attack the Teostra in openings between heals. This strategy encompasses Lunastra, too!')
     if message.content.startswith('mhw!xenojiiva'):
       await client.send_message(message.channel,'Xeno\'Jiiva: Elder Dragon \n Weaknesses: All Elements(Weakness Level 2) \n Status Weaknesses: Poison(Weakness Level 3), Paraylsis(Weakness Level 1), Blast(Weakness Level 2), Stun(Weakness Level 1) \n Resistances: Sleep \n Elderseal Effect: Reduces duration of Rage Mode. \n Weak Points: Head, Foreclaws, Tail \n \n Daniel\'s Solo Tips: Go for the time-tested LBG and a new piece of your arsenal, the Fireproof Mantle. Xeno\'Jiiva heats up the ground by using its beam attack, so you\'ll need the mantle to avoid Burning. Stalactites above can be knocked down. Make sure to stay on the elevated platforms to avoid its melee attacks until it breaks the platform. Use as much Dragon Ammo as possible to inflict Elderseal and keep its Rage Mode from hurting you too much. \n Daniel\'s Team Tips: Start with one two DPS LBGs, one Support LBG, and on DPS IG. Support LBG keeps the group safe with Healing Ammo and Dragon Ammo, as the IG goes to attack the tail with a Poison Kinsect. The DPS LBGs start by attacking the foreclaws, then move on to the head. Use plenty of Pierce Ammo, as it\'s one of the best Ammo types. Eventually you\'ll whittle its health down enough to win, as you keep yourself alive with Ghillie/Temporal Mantles and Potions.')
-
+    if message.content.startswith('dan!hangman')
+    await client.say('Yay! Let\'s play Hangman!')
+    await client.say('Make sure to guess letters in caps!')
+    await client.say('I\'m sure you know the rules, but if you don\'t, guess one letter at a time!')
+    await client.say('You only get 8 attempts! Good luck! The theme is FEH units!')
+    Answer = ['NINO', 'CORRIN', 'AYRA', 'ROBIN','LUCINA', 'BARTRE', 'ALFONSE', 'SHARENA', 'ANNA', 'LOKI', 'VERONICA', 'BRUNO','SURTR', 'LAEVATEIN', 'LAEGJARN', 'HELBINDI', 'MORGAN', 'KANA', 
+    'WILLIAM HOWARD TAFT', 'THEODORE ROOSEVELT', 'WILLIAM MCKINLEY', 
+    'GROVER CLEVELAx', 'BENJAMIN HARRISON', 'CHESTER A ARTHUR', 
+    'JAMES A GARFIELD', 'RUTHERFORD B HAYES', 'ULYESS S GRANT', 'ANDREW JACKSON',
+    'ABRAMHAM LINCOLN', 'JAMES BUCHANAN', 'FRANKLIN PIERCE', 'MILLARD FILLMORE',
+    'ZACHARY TAYLOR', 'JAMES K POLK', 'JOHN TYLER', 'WILLIAM HENERY HARRISON',
+    'MARTIN VAN BUREN','ANDREW JACKSON', 'JOHN QUINCY ADAMS', 'JAMES MONROE',
+    'JAMES MADISON', 'THOMAS JEFFERSON', 'JOHN ADAMS', 'GEORGE WASHINGTON']
+    #Word Picker
+    Answer_new = random.choice(Answer)
+    #Guessed word
+    guessed = ''
+    guess = []
+    word = []
+    what_guessed = []
+    lifes = 8
+    #Counter which increments based on the number of times guessed
+    count = 0
+    #Changes all characters aside from spaces to an underscore, appends to guess
+    for items in Answer_new:
+        word.append(items)
+        if items == ' ':
+            guess.append(' ')
+        else:
+            guess.append('_')
+    #await client.say out the guess(with underscores) and word(original word)
+    #
+    await client.say('For testing purposes this is the word:')
+    await client.say(''.join(word))
+    await client.say(''.join(guess))
+    await client.say('Number of lifes left:',lifes)
+    
+    #Constraints the number of guesses
+    while count < 8:
+        #Raw Input, limited to the length of the word you are trying to guess 
+        guessed = input('Guess(You only guess 1 letter at a time): ')[:1]
+        what_guessed += guessed
+        #Checks the guessed in word and then replaces the underscore with chars.
+        for character in guessed:
+            for char in range(0, len(word)):
+                if character == word[char]:
+                    guess[char]=word[char]
+        
+        
+        #Terminates the python function if code is correct, else, keeps going
+        if (''.join(guess)) == Answer_new:
+            break
+        if guessed not in Answer_new:
+            lifes = lifes - 1
+            count += 1
+        
+        
+        #Print out the guess(with underscores) and word(original word)
+        await client.say('For testing purposes this is the word:')
+        await client.say(''.join(word))
+        await client.say(''.join(guess))
+        await client.say('Number of lifes left:',lifes)
+        await client.say('What you have guessed so far:', what_guessed)
+    #Ending of the python game(win/loose)
+    if count < 8: 
+        await client.say('YOU WIN!')
+    else:
+        await client.say('You Lose! The president we were looking for is',  Answer_new )
+    #Printing of thank you message and credits at the end of the game
+    await client.say('Thank You For Playing Our Game')
+    await client.say('Credits: ')
+    await client.say('Code Courtesy of Avi Patel and Kevin Chen')
 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
-client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WOSA.P8UierWgqQ1DOAzxNwm57ebOcBE")
+client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WRTw.JZ2V_MyFcXoPnOJyxnHgGz89gig")
