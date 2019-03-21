@@ -158,12 +158,7 @@ async def on_message(message):
     if count < 8: 
         await client.say('Good job! You won!')
     else:
-        await client.say('You Lose! The president we were looking for is',  Answer_new )
-    #Printing of thank you message and credits at the end of the game
-    await client.say('Thank You For Playing Our Game')
-    await client.say('Credits: ')
-    await client.say('Code Courtesy of Avi Patel and Kevin Chen')
-
+        await client.say('Sorry, you lost. The Hero you were looking for was ',  Answer_new )
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
 client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WRTw.JZ2V_MyFcXoPnOJyxnHgGz89gig")
