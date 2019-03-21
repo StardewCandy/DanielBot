@@ -31,13 +31,13 @@ async def on_message(message):
 @client.event
 async def on_message(message):
     if message.content.startswith('dan!grookey'):
-        await client.send_message(message.channel, 'Grookey is super cute, and it\'s shows the more "mellow" side of happiness compared to the energy exhibited by Scorbunny, and it looks really nice! I\'d pick it, but for now I\'m on Team Sobble until we see final evolutions.')
+      await client.send_message(message.channel, 'Grookey is super cute, and it\'s shows the more "mellow" side of happiness compared to the energy exhibited by Scorbunny, and it looks really nice! I\'d pick it, but for now I\'m on Team Sobble until we see final evolutions.')
     if message.content.startswith('dan!scorbunny'):
-        await client.send_message(message.channel, 'Scorbunny is really cute and I love its energetic personality and how upbeat and happy it always looks!')
+      await client.send_message(message.channel, 'Scorbunny is really cute and I love its energetic personality and how upbeat and happy it always looks!')
     if message.content.startswith('dan!sobble'):
-        await client.send_message(message.channel, 'It\'s *soooo* cute and *sooo* charming and I love it and I want one and it\'s so precious and adorable and it looks so happy to be here!')
+      await client.send_message(message.channel, 'It\'s *soooo* cute and *sooo* charming and I love it and I want one and it\'s so precious and adorable and it looks so happy to be here!')
     if message.content.startswith('dan!gen8'):
-        await client.send_message(message.channel,'Sobble is *sooooo* cute! It\'s my favorite. It\'s like my spirit animal. Also, no one has commented on the new starters being Big Chungus and Harambe.')
+      await client.send_message(message.channel,'Sobble is *sooooo* cute! It\'s my favorite. It\'s like my spirit animal. Also, no one has commented on the new starters being Big Chungus and Harambe.')
     if message.content.startswith('dan!hug'):
       await client.send_message(message.channel, '*hugs back* Thank you!')
       global hugs
