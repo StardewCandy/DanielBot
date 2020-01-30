@@ -101,5 +101,5 @@ async def on_message(message):
 			await client.send_message(message.channel, 'Let\'s see... You rolled a' + d202 + '! Did you get what you were hoping for?') 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
-client.run("NTEwOTg4MzQxMzI4NjA5MzE1.D3WRTw.JZ2V_MyFcXoPnOJyxnHgGz89gig")
+client.run("key1")
 sizefix= done
