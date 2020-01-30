@@ -48,15 +48,15 @@ async def on_message(message):
       hugs1000+=1
       await client.send_message(message.channel, "Thanks! You've upped my total hug count to " + str(hugs) + "!")
       if hugs100==100:
-        await client.send_message(message.channel, "W-woah! 100 hugs! I'm so happy! *hugs back*")
+        await client.send_message(message.channel, "Woah! 100 hugs! I'm so happy!")
         hugs100-=100
       if hugs1000==1000:
-        await client.send_message(message.channel, "A t-thousand hugs? Really? Woah! T-thank you so much!")
+        await client.send_message(message.channel, "A thousand hugs? Really? That's a big number. This bot must be getting popular!")
         hugs1000-=1000
     if message.content.startswith('dan!headpat'):
-        await client.send_message(message.channel, '*smiles* Thank you!')
+        await client.send_message(message.channel, 'Thank you!')
     if message.content.startswith('dan!cookie'):
-      await client.send_message(message.channel, '*eats cookie* Thank you for the cookie!')
+      await client.send_message(message.channel, 'Thank you for the cookie!')
       global cookies
       global cookies100
       global cookies1000
@@ -65,22 +65,22 @@ async def on_message(message):
       cookies1000+=1
       await client.send_message(message.channel, "My total cookie count is "+ str(cookies)+"!")
       if cookies100==100:
-        await client.send_message(message.channel, "W-woah! A hundred cookies?! That's at least a whole cookie jar worth of cookies!")
+        await client.send_message(message.channel, "Woah! A hundred cookies?! That's at least a whole cookie jar worth of cookies!")
         cookies100-=100
       if cookies1000==1000:
-        await client.send_message(message.channel, "W-wait, really? That makes... 1000 whole cookies?! T-that's a lot of cookies! That's enough to fill... 200 cookie jars!")
+        await client.send_message(message.channel, "Wait, really? That makes... 1000 cookies?! Tthat's a lot of cookies! That's enough to fill... 200 cookie jars!")
         cookies1000-=1000
     if message.content.startswith('dan!flirt'):
       global awkwards
       global awkwards100
       awkwards += 1
-      await client.send_message(message.channel, '*blush* W-what? S-stop joking around!! People have tried to do that ' + str(awkwards) + " times.")
+      await client.send_message(message.channel, 'Wait, what? People have tried to do that ' + str(awkwards) + " times.")
       awkwards100 +=1
       if awkwards100 == 100:
-        await client.send_message(message.channel, '*blushes profusely* Honestly, I-I\'m starting to think you guys are serious... You\'ve tried that 100 times now...')
+        await client.send_message(message.channel, 'I\'m starting to wonder if you\'re serious... This is the 100th time you guys have done this.')
         awkwards100 -= 100
       if awkwards1000 == 1000:
-        await client.send_message(message.channel, "*blushes intensely* W-wait, r-really? Y-you've tried this 1000 times... *blushes more* A-are you r-really sure you want to?")
+        await client.send_message(message.channel, "A thousand times? Seriously? Is this some kind of meme?")
     if message.content.startswith('dan!erniegang'):
       await client.send_message(message.channel, 'Ernie Gang.')
     if message.content.startswith('mhw!kirin'):
